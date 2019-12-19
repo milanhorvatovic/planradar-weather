@@ -20,6 +20,7 @@
 		F465ED6923AC2CD4008120CB /* ImageBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED6823AC2CD4008120CB /* ImageBackgroundView.m */; };
 		F465ED6F23AC4084008120CB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED6E23AC4084008120CB /* NavigationController.m */; };
 		F465ED7323AC4233008120CB /* FetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED7223AC4233008120CB /* FetchedResultsControllerDelegate.m */; };
+		F465ED7423AC57B6008120CB /* CitiesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED6B23AC3E46008120CB /* CitiesListCell.m */; };
 		F47C334423ABC9EA00920151 /* NetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334323ABC9EA00920151 /* NetworkEngine.m */; };
 		F47C334723ABD46200920151 /* NetworkEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334623ABD46200920151 /* NetworkEngineTests.m */; };
 		F47C334A23ABD8A100920151 /* NetworkEngineMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334923ABD8A100920151 /* NetworkEngineMock.m */; };
@@ -34,6 +35,7 @@
 		F4BC250023ABB0D40066E2A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BC24F223ABB0D40066E2A0 /* LaunchScreen.storyboard */; };
 		F4BC250323ABB0D40066E2A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24FB23ABB0D40066E2A0 /* AppDelegate.m */; };
 		F4BC250423ABB0D40066E2A0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24FD23ABB0D40066E2A0 /* SceneDelegate.m */; };
+		F4BC250823ABB83F0066E2A0 /* CitiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC250723ABB83F0066E2A0 /* CitiesListViewController.m */; };
 		F4BC250D23ABB87A0066E2A0 /* ApplicationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC250C23ABB87A0066E2A0 /* ApplicationFactory.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		F465ED6323AC2955008120CB /* BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
 		F465ED6723AC2CD4008120CB /* ImageBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageBackgroundView.h; sourceTree = "<group>"; };
 		F465ED6823AC2CD4008120CB /* ImageBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageBackgroundView.m; sourceTree = "<group>"; };
+		F465ED6A23AC3E46008120CB /* CitiesListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesListCell.h; sourceTree = "<group>"; };
+		F465ED6B23AC3E46008120CB /* CitiesListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesListCell.m; sourceTree = "<group>"; };
 		F465ED6D23AC4084008120CB /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		F465ED6E23AC4084008120CB /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		F465ED7123AC4233008120CB /* FetchedResultsControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchedResultsControllerDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 		F4BC24FB23ABB0D40066E2A0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4BC24FC23ABB0D40066E2A0 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		F4BC24FD23ABB0D40066E2A0 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		F4BC250623ABB83F0066E2A0 /* CitiesListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesListViewController.h; sourceTree = "<group>"; };
+		F4BC250723ABB83F0066E2A0 /* CitiesListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesListViewController.m; sourceTree = "<group>"; };
 		F4BC250B23ABB87A0066E2A0 /* ApplicationFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationFactory.h; sourceTree = "<group>"; };
 		F4BC250C23ABB87A0066E2A0 /* ApplicationFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationFactory.m; sourceTree = "<group>"; };
 		FC525A000A7F5F6484E2CDE6 /* Pods-PlanRadar Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar Weather.release.xcconfig"; path = "Target Support Files/Pods-PlanRadar Weather/Pods-PlanRadar Weather.release.xcconfig"; sourceTree = "<group>"; };
@@ -363,6 +369,25 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		F4BC250523ABB8240066E2A0 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F4BC250623ABB83F0066E2A0 /* CitiesListViewController.h */,
+				F4BC250723ABB83F0066E2A0 /* CitiesListViewController.m */,
+				F465ED6A23AC3E46008120CB /* CitiesListCell.h */,
+				F465ED6B23AC3E46008120CB /* CitiesListCell.m */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F4BC250923ABB84B0066E2A0 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				F4BC250523ABB8240066E2A0 /* List */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -585,6 +610,7 @@
 				F47C335223AC000300920151 /* DataLoader.m in Sources */,
 				F47C334E23ABEA2300920151 /* ModelServiceWeather.m in Sources */,
 				F465ED5023AC0B8C008120CB /* DataProvider.m in Sources */,
+				F465ED7423AC57B6008120CB /* CitiesListCell.m in Sources */,
 				F465ED5A23AC0D70008120CB /* WeatherInfo+CoreDataClass.m in Sources */,
 				F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */,
 				F465ED6923AC2CD4008120CB /* ImageBackgroundView.m in Sources */,
@@ -595,6 +621,7 @@
 				F465ED6423AC2955008120CB /* BackgroundView.m in Sources */,
 				F4BC250423ABB0D40066E2A0 /* SceneDelegate.m in Sources */,
 				F465ED6123AC2687008120CB /* CommonViewController.m in Sources */,
+				F4BC250823ABB83F0066E2A0 /* CitiesListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
