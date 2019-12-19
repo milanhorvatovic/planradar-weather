@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2CBF80A22BAF3D1ACEED385E /* Pods_PlanRadar_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4A2D52A63AEFA6FCD937D8 /* Pods_PlanRadar_Weather.framework */; };
 		9A9B04090E1F0D28831DF06F /* Pods_PlanRadar_WeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */; };
+		F47C334E23ABEA2300920151 /* ModelServiceWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334D23ABEA2300920151 /* ModelServiceWeather.m */; };
 		F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24CA23ABAFD50066E2A0 /* main.m */; };
 		F4BC24D523ABAFD50066E2A0 /* PlanRadar_WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24D423ABAFD50066E2A0 /* PlanRadar_WeatherTests.m */; };
 		F4BC24E023ABAFD50066E2A0 /* PlanRadar_WeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24DF23ABAFD50066E2A0 /* PlanRadar_WeatherUITests.m */; };
@@ -42,6 +43,8 @@
 		BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadar_WeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04B2F111F86EF5FECE885CB /* Pods-PlanRadar WeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar WeatherTests.release.xcconfig"; path = "Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		E94CF7BA001B6826923B9518 /* Pods-PlanRadar WeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar WeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F47C334D23ABEA2300920151 /* ModelServiceWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelServiceWeather.m; sourceTree = "<group>"; };
+		F47C334F23ABEA4700920151 /* ModelServiceWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelServiceWeather.h; sourceTree = "<group>"; };
 		F4BC24B223ABAFD40066E2A0 /* PlanRadar Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PlanRadar Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BC24CA23ABAFD50066E2A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4BC24D023ABAFD50066E2A0 /* PlanRadar WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PlanRadar WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +111,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F47C334023ABC8AA00920151 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F47C334F23ABEA4700920151 /* ModelServiceWeather.h */,
+				F47C334D23ABEA2300920151 /* ModelServiceWeather.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		F4BC24A923ABAFD40066E2A0 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +175,7 @@
 		F4BC24ED23ABB0D40066E2A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F47C334023ABC8AA00920151 /* Service */,
 				F4BC24EE23ABB0D40066E2A0 /* PlanRadar_Weather.xcdatamodeld */,
 			);
 			path = Model;
@@ -419,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4BC24FE23ABB0D40066E2A0 /* PlanRadar_Weather.xcdatamodeld in Sources */,
+				F47C334E23ABEA2300920151 /* ModelServiceWeather.m in Sources */,
 				F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */,
 				F4BC250323ABB0D40066E2A0 /* AppDelegate.m in Sources */,
 				F4BC250423ABB0D40066E2A0 /* SceneDelegate.m in Sources */,
