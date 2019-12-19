@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CBF80A22BAF3D1ACEED385E /* Pods_PlanRadar_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4A2D52A63AEFA6FCD937D8 /* Pods_PlanRadar_Weather.framework */; };
+		9A9B04090E1F0D28831DF06F /* Pods_PlanRadar_WeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */; };
 		F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24CA23ABAFD50066E2A0 /* main.m */; };
 		F4BC24D523ABAFD50066E2A0 /* PlanRadar_WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24D423ABAFD50066E2A0 /* PlanRadar_WeatherTests.m */; };
 		F4BC24E023ABAFD50066E2A0 /* PlanRadar_WeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24DF23ABAFD50066E2A0 /* PlanRadar_WeatherUITests.m */; };
@@ -35,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C4A2D52A63AEFA6FCD937D8 /* Pods_PlanRadar_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadar_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E588EBA02187D8D320438A /* Pods-PlanRadar Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar Weather.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadar Weather/Pods-PlanRadar Weather.debug.xcconfig"; sourceTree = "<group>"; };
+		BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadar_WeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D04B2F111F86EF5FECE885CB /* Pods-PlanRadar WeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar WeatherTests.release.xcconfig"; path = "Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests.release.xcconfig"; sourceTree = "<group>"; };
+		E94CF7BA001B6826923B9518 /* Pods-PlanRadar WeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar WeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4BC24B223ABAFD40066E2A0 /* PlanRadar Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PlanRadar Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BC24CA23ABAFD50066E2A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4BC24D023ABAFD50066E2A0 /* PlanRadar WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PlanRadar WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +58,7 @@
 		F4BC24FB23ABB0D40066E2A0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4BC24FC23ABB0D40066E2A0 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		F4BC24FD23ABB0D40066E2A0 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		FC525A000A7F5F6484E2CDE6 /* Pods-PlanRadar Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar Weather.release.xcconfig"; path = "Target Support Files/Pods-PlanRadar Weather/Pods-PlanRadar Weather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CBF80A22BAF3D1ACEED385E /* Pods_PlanRadar_Weather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A9B04090E1F0D28831DF06F /* Pods_PlanRadar_WeatherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +88,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		359388B531A950603FE4266D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99E588EBA02187D8D320438A /* Pods-PlanRadar Weather.debug.xcconfig */,
+				FC525A000A7F5F6484E2CDE6 /* Pods-PlanRadar Weather.release.xcconfig */,
+				E94CF7BA001B6826923B9518 /* Pods-PlanRadar WeatherTests.debug.xcconfig */,
+				D04B2F111F86EF5FECE885CB /* Pods-PlanRadar WeatherTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		879084C7E4236DD7717ED0C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C4A2D52A63AEFA6FCD937D8 /* Pods_PlanRadar_Weather.framework */,
+				BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F4BC24A923ABAFD40066E2A0 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +115,8 @@
 				F4BC24D323ABAFD50066E2A0 /* PlanRadar WeatherTests */,
 				F4BC24DE23ABAFD50066E2A0 /* PlanRadar WeatherUITests */,
 				F4BC24B323ABAFD40066E2A0 /* Products */,
+				359388B531A950603FE4266D /* Pods */,
+				879084C7E4236DD7717ED0C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4BC24E423ABAFD50066E2A0 /* Build configuration list for PBXNativeTarget "PlanRadar Weather" */;
 			buildPhases = (
+				BA57C83979435CB31CC22F6D /* [CP] Check Pods Manifest.lock */,
 				F4BC24AE23ABAFD40066E2A0 /* Sources */,
 				F4BC24AF23ABAFD40066E2A0 /* Frameworks */,
 				F4BC24B023ABAFD40066E2A0 /* Resources */,
+				13741EAC0F321D6326C79276 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4BC24E723ABAFD50066E2A0 /* Build configuration list for PBXNativeTarget "PlanRadar WeatherTests" */;
 			buildPhases = (
+				00E9416C2242E8C8927C5140 /* [CP] Check Pods Manifest.lock */,
 				F4BC24CC23ABAFD50066E2A0 /* Sources */,
 				F4BC24CD23ABAFD50066E2A0 /* Frameworks */,
 				F4BC24CE23ABAFD50066E2A0 /* Resources */,
+				7A8A613B3E2C1A58237F337F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +331,87 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00E9416C2242E8C8927C5140 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanRadar WeatherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13741EAC0F321D6326C79276 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanRadar Weather/Pods-PlanRadar Weather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanRadar Weather/Pods-PlanRadar Weather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanRadar Weather/Pods-PlanRadar Weather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A8A613B3E2C1A58237F337F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA57C83979435CB31CC22F6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanRadar Weather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4BC24AE23ABAFD40066E2A0 /* Sources */ = {
@@ -467,6 +584,7 @@
 		};
 		F4BC24E523ABAFD50066E2A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99E588EBA02187D8D320438A /* Pods-PlanRadar Weather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +602,7 @@
 		};
 		F4BC24E623ABAFD50066E2A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC525A000A7F5F6484E2CDE6 /* Pods-PlanRadar Weather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -501,6 +620,7 @@
 		};
 		F4BC24E823ABAFD50066E2A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E94CF7BA001B6826923B9518 /* Pods-PlanRadar WeatherTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -520,6 +640,7 @@
 		};
 		F4BC24E923ABAFD50066E2A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D04B2F111F86EF5FECE885CB /* Pods-PlanRadar WeatherTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
