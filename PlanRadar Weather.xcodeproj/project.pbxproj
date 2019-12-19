@@ -29,6 +29,7 @@
 		F4BC250023ABB0D40066E2A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BC24F223ABB0D40066E2A0 /* LaunchScreen.storyboard */; };
 		F4BC250323ABB0D40066E2A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24FB23ABB0D40066E2A0 /* AppDelegate.m */; };
 		F4BC250423ABB0D40066E2A0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24FD23ABB0D40066E2A0 /* SceneDelegate.m */; };
+		F4BC250D23ABB87A0066E2A0 /* ApplicationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC250C23ABB87A0066E2A0 /* ApplicationFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		F4BC24FB23ABB0D40066E2A0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4BC24FC23ABB0D40066E2A0 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		F4BC24FD23ABB0D40066E2A0 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		F4BC250B23ABB87A0066E2A0 /* ApplicationFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationFactory.h; sourceTree = "<group>"; };
+		F4BC250C23ABB87A0066E2A0 /* ApplicationFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationFactory.m; sourceTree = "<group>"; };
 		FC525A000A7F5F6484E2CDE6 /* Pods-PlanRadar Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar Weather.release.xcconfig"; path = "Target Support Files/Pods-PlanRadar Weather/Pods-PlanRadar Weather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,6 +299,8 @@
 				F4BC24FB23ABB0D40066E2A0 /* AppDelegate.m */,
 				F4BC24FC23ABB0D40066E2A0 /* SceneDelegate.h */,
 				F4BC24FD23ABB0D40066E2A0 /* SceneDelegate.m */,
+				F4BC250B23ABB87A0066E2A0 /* ApplicationFactory.h */,
+				F4BC250C23ABB87A0066E2A0 /* ApplicationFactory.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */,
 				F4BC250323ABB0D40066E2A0 /* AppDelegate.m in Sources */,
 				F465ED5D23AC0D70008120CB /* WeatherInfo+CoreDataProperties.m in Sources */,
+				F4BC250D23ABB87A0066E2A0 /* ApplicationFactory.m in Sources */,
 				F4BC250423ABB0D40066E2A0 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

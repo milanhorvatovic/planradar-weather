@@ -8,15 +8,23 @@
 
 #import "AppDelegate.h"
 
+#import "ApplicationFactory.h"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+@synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if (@available(iOS 13, *)) {
+    }
+    else {
+        self.window = [ApplicationFactory createApplication];
+    }
     return YES;
 }
 
