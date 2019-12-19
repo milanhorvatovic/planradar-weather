@@ -10,6 +10,10 @@
 		2CBF80A22BAF3D1ACEED385E /* Pods_PlanRadar_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4A2D52A63AEFA6FCD937D8 /* Pods_PlanRadar_Weather.framework */; };
 		9A9B04090E1F0D28831DF06F /* Pods_PlanRadar_WeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */; };
 		F465ED4D23AC06D7008120CB /* DataLoaderMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED4C23AC06D7008120CB /* DataLoaderMock.m */; };
+		F465ED5A23AC0D70008120CB /* WeatherInfo+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5423AC0D70008120CB /* WeatherInfo+CoreDataClass.m */; };
+		F465ED5B23AC0D70008120CB /* City+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5523AC0D70008120CB /* City+CoreDataClass.m */; };
+		F465ED5C23AC0D70008120CB /* City+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5623AC0D70008120CB /* City+CoreDataProperties.m */; };
+		F465ED5D23AC0D70008120CB /* WeatherInfo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5723AC0D70008120CB /* WeatherInfo+CoreDataProperties.m */; };
 		F47C334423ABC9EA00920151 /* NetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334323ABC9EA00920151 /* NetworkEngine.m */; };
 		F47C334723ABD46200920151 /* NetworkEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334623ABD46200920151 /* NetworkEngineTests.m */; };
 		F47C334A23ABD8A100920151 /* NetworkEngineMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334923ABD8A100920151 /* NetworkEngineMock.m */; };
@@ -51,6 +55,14 @@
 		E94CF7BA001B6826923B9518 /* Pods-PlanRadar WeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar WeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F465ED4B23AC06D7008120CB /* DataLoaderMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLoaderMock.h; sourceTree = "<group>"; };
 		F465ED4C23AC06D7008120CB /* DataLoaderMock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataLoaderMock.m; sourceTree = "<group>"; };
+		F465ED5223AC0D70008120CB /* WeatherInfo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeatherInfo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F465ED5323AC0D70008120CB /* City+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+CoreDataClass.h"; sourceTree = "<group>"; };
+		F465ED5423AC0D70008120CB /* WeatherInfo+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WeatherInfo+CoreDataClass.m"; sourceTree = "<group>"; };
+		F465ED5523AC0D70008120CB /* City+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+CoreDataClass.m"; sourceTree = "<group>"; };
+		F465ED5623AC0D70008120CB /* City+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F465ED5723AC0D70008120CB /* WeatherInfo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WeatherInfo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F465ED5823AC0D70008120CB /* WeatherInfo+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeatherInfo+CoreDataClass.h"; sourceTree = "<group>"; };
+		F465ED5923AC0D70008120CB /* City+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F47C334223ABC9EA00920151 /* NetworkEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkEngine.h; sourceTree = "<group>"; };
 		F47C334323ABC9EA00920151 /* NetworkEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkEngine.m; sourceTree = "<group>"; };
 		F47C334623ABD46200920151 /* NetworkEngineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkEngineTests.m; sourceTree = "<group>"; };
@@ -125,6 +137,21 @@
 				BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F465ED5123AC0D49008120CB /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED5323AC0D70008120CB /* City+CoreDataClass.h */,
+				F465ED5523AC0D70008120CB /* City+CoreDataClass.m */,
+				F465ED5923AC0D70008120CB /* City+CoreDataProperties.h */,
+				F465ED5623AC0D70008120CB /* City+CoreDataProperties.m */,
+				F465ED5823AC0D70008120CB /* WeatherInfo+CoreDataClass.h */,
+				F465ED5423AC0D70008120CB /* WeatherInfo+CoreDataClass.m */,
+				F465ED5223AC0D70008120CB /* WeatherInfo+CoreDataProperties.h */,
+				F465ED5723AC0D70008120CB /* WeatherInfo+CoreDataProperties.m */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		F47C334023ABC8AA00920151 /* Service */ = {
@@ -225,6 +252,7 @@
 		F4BC24ED23ABB0D40066E2A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F465ED5123AC0D49008120CB /* Content */,
 				F47C334023ABC8AA00920151 /* Service */,
 				F4BC24EE23ABB0D40066E2A0 /* PlanRadar_Weather.xcdatamodeld */,
 			);
@@ -481,12 +509,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F465ED5C23AC0D70008120CB /* City+CoreDataProperties.m in Sources */,
+				F465ED5B23AC0D70008120CB /* City+CoreDataClass.m in Sources */,
 				F47C334423ABC9EA00920151 /* NetworkEngine.m in Sources */,
 				F4BC24FE23ABB0D40066E2A0 /* PlanRadar_Weather.xcdatamodeld in Sources */,
 				F47C335223AC000300920151 /* DataLoader.m in Sources */,
 				F47C334E23ABEA2300920151 /* ModelServiceWeather.m in Sources */,
+				F465ED5A23AC0D70008120CB /* WeatherInfo+CoreDataClass.m in Sources */,
 				F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */,
 				F4BC250323ABB0D40066E2A0 /* AppDelegate.m in Sources */,
+				F465ED5D23AC0D70008120CB /* WeatherInfo+CoreDataProperties.m in Sources */,
 				F4BC250423ABB0D40066E2A0 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
