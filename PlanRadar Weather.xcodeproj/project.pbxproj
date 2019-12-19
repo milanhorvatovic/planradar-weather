@@ -10,6 +10,7 @@
 		2CBF80A22BAF3D1ACEED385E /* Pods_PlanRadar_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4A2D52A63AEFA6FCD937D8 /* Pods_PlanRadar_Weather.framework */; };
 		9A9B04090E1F0D28831DF06F /* Pods_PlanRadar_WeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */; };
 		F465ED4D23AC06D7008120CB /* DataLoaderMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED4C23AC06D7008120CB /* DataLoaderMock.m */; };
+		F465ED5023AC0B8C008120CB /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED4F23AC0B8C008120CB /* DataProvider.m */; };
 		F465ED5A23AC0D70008120CB /* WeatherInfo+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5423AC0D70008120CB /* WeatherInfo+CoreDataClass.m */; };
 		F465ED5B23AC0D70008120CB /* City+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5523AC0D70008120CB /* City+CoreDataClass.m */; };
 		F465ED5C23AC0D70008120CB /* City+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5623AC0D70008120CB /* City+CoreDataProperties.m */; };
@@ -55,6 +56,8 @@
 		E94CF7BA001B6826923B9518 /* Pods-PlanRadar WeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar WeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F465ED4B23AC06D7008120CB /* DataLoaderMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLoaderMock.h; sourceTree = "<group>"; };
 		F465ED4C23AC06D7008120CB /* DataLoaderMock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataLoaderMock.m; sourceTree = "<group>"; };
+		F465ED4E23AC0B8C008120CB /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
+		F465ED4F23AC0B8C008120CB /* DataProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
 		F465ED5223AC0D70008120CB /* WeatherInfo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeatherInfo+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F465ED5323AC0D70008120CB /* City+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+CoreDataClass.h"; sourceTree = "<group>"; };
 		F465ED5423AC0D70008120CB /* WeatherInfo+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WeatherInfo+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				F47C334323ABC9EA00920151 /* NetworkEngine.m */,
 				F47C335023AC000300920151 /* DataLoader.h */,
 				F47C335123AC000300920151 /* DataLoader.m */,
+				F465ED4E23AC0B8C008120CB /* DataProvider.h */,
+				F465ED4F23AC0B8C008120CB /* DataProvider.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 				F4BC24FE23ABB0D40066E2A0 /* PlanRadar_Weather.xcdatamodeld in Sources */,
 				F47C335223AC000300920151 /* DataLoader.m in Sources */,
 				F47C334E23ABEA2300920151 /* ModelServiceWeather.m in Sources */,
+				F465ED5023AC0B8C008120CB /* DataProvider.m in Sources */,
 				F465ED5A23AC0D70008120CB /* WeatherInfo+CoreDataClass.m in Sources */,
 				F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */,
 				F4BC250323ABB0D40066E2A0 /* AppDelegate.m in Sources */,
