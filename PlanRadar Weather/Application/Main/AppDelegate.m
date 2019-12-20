@@ -18,6 +18,11 @@
 
 @synthesize window;
 
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey,id> *)launchOptions {
+    self.persistentContainer.viewContext.automaticallyMergesChangesFromParent = YES;
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     if (@available(iOS 13, *)) {
