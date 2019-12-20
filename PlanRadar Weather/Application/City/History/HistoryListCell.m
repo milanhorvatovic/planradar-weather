@@ -34,6 +34,7 @@
     if (self = [super initWithStyle:style
                     reuseIdentifier:reuseIdentifier]) {
         self.backgroundColor = UIColor.clearColor;
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
         UIStackView *stackView = [self _createVerticalStackView];
         self._dateLabel = [self _createDateLabel];
@@ -84,7 +85,6 @@
 }
 
 @end
-
 
 @implementation HistoryListCell (Configure)
 

@@ -8,16 +8,9 @@
 
 #import "CommonViewController.h"
 
-@class City;
-@protocol WeatherDataLoader, SaveDataProvider;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CityDetailViewController: CommonViewController
-
-- (instancetype)initWithCity:(City *)city
-           weatherDataLoader:(id<WeatherDataLoader>)dataLoader
-            saveDataProvider:(id<SaveDataProvider>)dataProvider;
 
 @end
 

@@ -34,6 +34,8 @@
 		F47C335223AC000300920151 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C335123AC000300920151 /* DataLoader.m */; };
 		F47C335423AC05F200920151 /* DataLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C335323AC05F200920151 /* DataLoaderTests.m */; };
 		F4B52DAB23AC982000397DEA /* ModelServiceWeatherList.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B52DAA23AC982000397DEA /* ModelServiceWeatherList.m */; };
+		F4B52DAE23ACA8D700397DEA /* StaticCityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B52DAD23ACA8D700397DEA /* StaticCityDetailViewController.m */; };
+		F4B52DB123ACA8FD00397DEA /* LiveCityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B52DB023ACA8FD00397DEA /* LiveCityDetailViewController.m */; };
 		F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24CA23ABAFD50066E2A0 /* main.m */; };
 		F4BC24D523ABAFD50066E2A0 /* PlanRadar_WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24D423ABAFD50066E2A0 /* PlanRadar_WeatherTests.m */; };
 		F4BC24E023ABAFD50066E2A0 /* PlanRadar_WeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24DF23ABAFD50066E2A0 /* PlanRadar_WeatherUITests.m */; };
@@ -117,6 +119,11 @@
 		F47C335323AC05F200920151 /* DataLoaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataLoaderTests.m; sourceTree = "<group>"; };
 		F4B52DA923AC982000397DEA /* ModelServiceWeatherList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelServiceWeatherList.h; sourceTree = "<group>"; };
 		F4B52DAA23AC982000397DEA /* ModelServiceWeatherList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelServiceWeatherList.m; sourceTree = "<group>"; };
+		F4B52DAC23ACA8D700397DEA /* StaticCityDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticCityDetailViewController.h; sourceTree = "<group>"; };
+		F4B52DAD23ACA8D700397DEA /* StaticCityDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticCityDetailViewController.m; sourceTree = "<group>"; };
+		F4B52DAF23ACA8FC00397DEA /* LiveCityDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveCityDetailViewController.h; sourceTree = "<group>"; };
+		F4B52DB023ACA8FD00397DEA /* LiveCityDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveCityDetailViewController.m; sourceTree = "<group>"; };
+		F4B52DB223ACAA8F00397DEA /* CityDetailViewController_Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityDetailViewController_Protected.h; sourceTree = "<group>"; };
 		F4BC24B223ABAFD40066E2A0 /* PlanRadar Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PlanRadar Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BC24CA23ABAFD50066E2A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4BC24D023ABAFD50066E2A0 /* PlanRadar WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PlanRadar WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,6 +265,11 @@
 			children = (
 				F465ED7A23AC6F79008120CB /* CityDetailViewController.h */,
 				F465ED7B23AC6F79008120CB /* CityDetailViewController.m */,
+				F4B52DB223ACAA8F00397DEA /* CityDetailViewController_Protected.h */,
+				F4B52DAC23ACA8D700397DEA /* StaticCityDetailViewController.h */,
+				F4B52DAD23ACA8D700397DEA /* StaticCityDetailViewController.m */,
+				F4B52DAF23ACA8FC00397DEA /* LiveCityDetailViewController.h */,
+				F4B52DB023ACA8FD00397DEA /* LiveCityDetailViewController.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -677,6 +689,7 @@
 				F465ED5023AC0B8C008120CB /* DataProvider.m in Sources */,
 				F465ED7423AC57B6008120CB /* CitiesListCell.m in Sources */,
 				F465ED5A23AC0D70008120CB /* WeatherInfo+CoreDataClass.m in Sources */,
+				F4B52DAE23ACA8D700397DEA /* StaticCityDetailViewController.m in Sources */,
 				F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */,
 				F465ED6923AC2CD4008120CB /* ImageBackgroundView.m in Sources */,
 				F4BC250323ABB0D40066E2A0 /* AppDelegate.m in Sources */,
@@ -688,6 +701,7 @@
 				F4BC250423ABB0D40066E2A0 /* SceneDelegate.m in Sources */,
 				F465ED6123AC2687008120CB /* CommonViewController.m in Sources */,
 				F4BC250823ABB83F0066E2A0 /* CitiesListViewController.m in Sources */,
+				F4B52DB123ACA8FD00397DEA /* LiveCityDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

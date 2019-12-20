@@ -8,12 +8,12 @@
 
 #import "HistoryListViewController.h"
 
-#import "AppDelegate.h"
 #import "DataProvider.h"
 #import "City+CoreDataProperties.h"
 #import "FetchedResultsControllerDelegate.h"
 
 #import "HistoryListCell.h"
+#import "StaticCityDetailViewController.h"
 
 @interface HistoryListViewController (CreateUI)
 
@@ -22,6 +22,8 @@
 @end
 
 @interface HistoryListViewController (TableViewDataSource) <UITableViewDataSource>
+@end
+@interface HistoryListViewController (TableViewDelegate) <UITableViewDelegate>
 @end
 
 @interface HistoryListViewController ()
@@ -76,6 +78,7 @@
     self._tableView = [self _createTableView];
     [self.view addSubview:self._tableView];
     self._tableView.dataSource = self;
+    self._tableView.delegate = self;
     self._tableView.tableFooterView = [[UIView alloc] init];
     self._tableView.rowHeight = UITableViewAutomaticDimension;
     self._tableView.estimatedRowHeight = 72;
@@ -134,6 +137,24 @@
                                                            forIndexPath:indexPath];
     [cell configureWithWeatherInfo:[self._resultsController objectAtIndexPath:indexPath]];
     return cell;
+}
+
+@end
+
+@implementation HistoryListViewController (TableViewDelegate)
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
+    
+    WeatherInfo *weatherInfo = [self._resultsController objectAtIndexPath:indexPath];
+    if (!weatherInfo) {
+        return;
+    }
+    StaticCityDetailViewController *viewController = [[StaticCityDetailViewController alloc] initWithWeatherInfo:weatherInfo];
+    [self presentViewController:viewController
+                       animated:YES
+                     completion:nil];
 }
 
 @end

@@ -16,7 +16,7 @@
 
 #import "CitiesListCell.h"
 #import "CitySeachViewController.h"
-#import "CityDetailViewController.h"
+#import "LiveCityDetailViewController.h"
 #import "HistoryListViewController.h"
 
 @interface CitiesListViewController (CreateUI)
@@ -217,9 +217,9 @@
         return;
     }
     AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
-    CityDetailViewController *viewController = [[CityDetailViewController alloc] initWithCity:city
-                                                                            weatherDataLoader:(id<WeatherDataLoader>) appDelegate.dataLoader
-                                                                             saveDataProvider:(id<SaveDataProvider>) appDelegate.dataProvider];
+    LiveCityDetailViewController *viewController = [[LiveCityDetailViewController alloc] initWithCity:city
+                                                                                    weatherDataLoader:(id<WeatherDataLoader>) appDelegate.dataLoader
+                                                                                     saveDataProvider:(id<SaveDataProvider>) appDelegate.dataProvider];
     [self presentViewController:viewController
                        animated:YES
                      completion:nil];
