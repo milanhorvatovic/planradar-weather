@@ -57,7 +57,7 @@
 
 @implementation CitiesListViewController
 
-- (instancetype)initWithFetchDataProvider:(id<FetchDataProvider>)dataProvider
+- (instancetype)initWithFetchDataProvider:(id<FetchDataProvider, SaveDataProvider>)dataProvider
                         weatherDataLoader:(id<WeatherDataLoader>)dataLoader {
     if (self = [self initWithNibName:nil
                               bundle:nil]) {
@@ -148,7 +148,9 @@
 - (UIRefreshControl *)_createPullToRefresh {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to refresh"];
-    [refreshControl addTarget:self action:@selector(_pullToRefreshAction) forControlEvents:UIControlEventValueChanged];
+    [refreshControl addTarget:self
+                       action:@selector(_pullToRefreshAction)
+             forControlEvents:UIControlEventValueChanged];
     return refreshControl;
 }
 
@@ -160,7 +162,9 @@
     AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
     CitySeachViewController *viewController = [[CitySeachViewController alloc] initWithWeatherDataLoader:(id<WeatherDataLoader>) appDelegate.dataLoader
                                                                                         saveDataProvider:(id<SaveDataProvider>) appDelegate.dataProvider];
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self presentViewController:viewController
+                       animated:YES
+                     completion:nil];
 }
 
 - (void)_pullToRefreshAction {
@@ -177,7 +181,13 @@
     __weak typeof(self) weakSelf = self;
     [self.dataLoader loadWeathersWithIds:ids
                             completition:^(NSArray<ModelServiceWeather *> * _Nullable object, NSError * _Nullable error) {
-        [weakSelf.dataProvider saveWeathers:object];
+        __strong typeof(self) strongSelf = weakSelf;
+        if (error) {
+            [strongSelf _showError:error];
+        }
+        else {
+            [weakSelf.dataProvider saveWeathers:object];
+        }
         [NSOperationQueue.mainQueue addOperationWithBlock:^{
             [weakSelf._pullToRefresh endRefreshing];
         }];

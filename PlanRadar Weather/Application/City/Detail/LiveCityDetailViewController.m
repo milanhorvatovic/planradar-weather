@@ -51,7 +51,7 @@
                             completition:^(ModelServiceWeather * _Nullable object, NSError * _Nullable error) {
         __strong typeof(self) strongSelf = weakSelf;
         if (error) {
-            
+            [strongSelf _showError:error];
         }
         else {
             [strongSelf.dataProvider saveWeather:object];

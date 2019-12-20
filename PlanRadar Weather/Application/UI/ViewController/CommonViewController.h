@@ -28,4 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface CommonViewController (ShowError)
+
+- (void)_showError:(NSError *)error;
+
+@end
+
 NS_ASSUME_NONNULL_END

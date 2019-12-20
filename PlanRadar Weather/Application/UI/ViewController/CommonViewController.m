@@ -61,3 +61,22 @@
 }
 
 @end
+
+@implementation CommonViewController (ErrorHandling)
+
+- (void)_showError:(NSError *)error {
+    if (!error) {
+        return;
+    }
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                             message:error.localizedFailureReason ?: error.localizedRecoverySuggestion ?: error.localizedDescription
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:nil]];
+    [self presentViewController:alertController
+                       animated:true
+                     completion:nil];
+}
+
+@end
