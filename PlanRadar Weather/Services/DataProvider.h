@@ -40,6 +40,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@protocol DeleteDataProvider
+
+- (void)deleteCity:(City *)city;
+
+@end
+
 @interface DataProvider: NSObject
 
 @property (nonnull, readonly, strong, nonatomic) id<StoreEngine> engine;
@@ -53,6 +59,10 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface DataProvider (Save) <SaveDataProvider>
+
+@end
+
+@interface DataProvider (Delete) <DeleteDataProvider>
 
 @end
 

@@ -74,9 +74,22 @@
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                         style:UIAlertActionStyleDefault
                                                       handler:nil]];
-    [self presentViewController:alertController
-                       animated:true
-                     completion:nil];
+    [self _showAlertController:alertController];
+}
+
+- (void)_showAlertController:(UIAlertController *)alertController {
+    if (NSThread.isMainThread) {
+        [self presentViewController:alertController
+                           animated:true
+                         completion:nil];
+    }
+    else {
+        [NSOperationQueue.mainQueue addOperationWithBlock:^{
+            [self presentViewController:alertController
+                               animated:true
+                             completion:nil];
+        }];
+    }
 }
 
 @end

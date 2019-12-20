@@ -43,7 +43,7 @@
 
 @interface CitiesListViewController ()
 
-@property (nonnull, readwrite, strong, nonatomic) id<FetchDataProvider, SaveDataProvider> dataProvider;
+@property (nonnull, readwrite, strong, nonatomic) id<FetchDataProvider, SaveDataProvider, DeleteDataProvider> dataProvider;
 @property (nonnull, readwrite, strong, nonatomic) id<WeatherDataLoader> dataLoader;
 
 @property (nonnull, readwrite, strong, nonatomic) NSFetchedResultsController *_resultsController;
@@ -58,7 +58,7 @@
 
 @implementation CitiesListViewController
 
-- (instancetype)initWithFetchDataProvider:(id<FetchDataProvider, SaveDataProvider>)dataProvider
+- (instancetype)initWithFetchDataProvider:(id<FetchDataProvider, SaveDataProvider, DeleteDataProvider>)dataProvider
                         weatherDataLoader:(id<WeatherDataLoader>)dataLoader {
     if (self = [self initWithNibName:nil
                               bundle:nil]) {
@@ -279,6 +279,36 @@
                                                                               fetchDataProvider:(id<FetchDataProvider>) appDelegate.dataProvider];
     [self.navigationController pushViewController:viewController
                                          animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle != UITableViewCellEditingStyleDelete) {
+        return;
+    }
+    City *city = [self._resultsController objectAtIndexPath:indexPath];
+    if (!city) {
+        return;
+    }
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Confimation"
+                                                                             message:[NSString stringWithFormat:@"Are you sure about deleting %@?", city.name]
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    __weak typeof(self) weakSelf = self;
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Delete"
+                                                        style:UIAlertActionStyleDestructive
+                                                      handler:^(UIAlertAction * _Nonnull action) {
+        __strong typeof(self) strongSelf = weakSelf;
+        City *city = [self._resultsController objectAtIndexPath:indexPath];
+        if (!city) {
+            return;
+        }
+        [strongSelf.dataProvider deleteCity:city];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:nil]];
+    [self presentViewController:alertController
+                       animated:true
+                     completion:nil];
 }
 
 @end

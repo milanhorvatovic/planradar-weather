@@ -182,10 +182,32 @@
         }
     }
     if (![context save:&error]) {
-          @throw [NSException exceptionWithName:@"Invalid processing"
-                                         reason:[NSString stringWithFormat:@"Saving context failed due to %@", error]
-                                       userInfo:nil];
-      }
+        @throw [NSException exceptionWithName:@"Invalid processing"
+                                       reason:[NSString stringWithFormat:@"Saving context failed due to %@", error]
+                                     userInfo:nil];
+    }
+}
+
+@end
+
+@implementation DataProvider (Delete)
+
+- (void)deleteCity:(City *)city {
+    NSManagedObjectContext *context = [self.engine createWriteContext];
+    NSError *error;
+    City *retrievedCity = [context existingObjectWithID:city.objectID
+                                                  error:&error];
+    if (!retrievedCity) {
+        @throw [NSException exceptionWithName:@"Invalid processing"
+                                       reason:[NSString stringWithFormat:@"Missing object by objectID %@", city]
+                                     userInfo:nil];
+    }
+    [context deleteObject:retrievedCity];
+    if (![context save:&error]) {
+        @throw [NSException exceptionWithName:@"Invalid processing"
+                                       reason:[NSString stringWithFormat:@"Saving context failed due to %@", error]
+                                     userInfo:nil];
+    }
 }
 
 @end
