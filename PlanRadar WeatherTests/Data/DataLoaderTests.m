@@ -29,6 +29,9 @@
 - (void)_tryWithName:(NSString *)name
                using:(DataLoader *)loader;
 
+- (void)_tryWithIds:(NSArray<NSNumber *> *)ids
+              using:(DataLoader *)loader;
+
 @end
 
 @implementation DataLoaderTests
@@ -49,6 +52,18 @@
     }
 }
 
+- (void)test_load_multiple {
+    DataLoader *loader = [self _prepareRealLoaderWithEngine:[self _prepareRealNetworkEngine]];
+    
+    NSArray<NSNumber *> *samples = @[@3669881,
+                                     @4887398,
+                                     @5128581,
+                                     @2643743,
+                                     @2761369,];
+    
+    [self _tryWithIds:samples
+                 using:loader];
+}
 
 @end
 
@@ -75,6 +90,27 @@
                    completition:^(ModelServiceWeather * _Nullable object, NSError * _Nullable error) {
         XCTAssertNotNil(object);
         XCTAssertNil(error);
+        NSLog(@"Received object: %@", object);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:60
+                                 handler:^(NSError * _Nullable error) {
+        if (error) {
+            XCTFail(@"Expectation Failed with error: %@", error);
+        }
+    }];
+}
+
+- (void)_tryWithIds:(NSArray<NSNumber *> *)ids
+               using:(DataLoader *)loader {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Async data loading"];
+    
+    [loader loadWeathersWithIds:ids
+                   completition:^(NSArray<ModelServiceWeather *> * _Nullable object, NSError * _Nullable error) {
+        XCTAssertNotNil(object);
+        XCTAssertNil(error);
+        XCTAssertTrue(object.count > 0);
         NSLog(@"Received object: %@", object);
         [expectation fulfill];
     }];

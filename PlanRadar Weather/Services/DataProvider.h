@@ -36,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol SaveDataProvider
 
 - (void)saveWeather:(ModelServiceWeather *)weather;
+- (void)saveWeathers:(NSArray<ModelServiceWeather *> *)weathers;
 
 @end
 

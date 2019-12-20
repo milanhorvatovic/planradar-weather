@@ -40,6 +40,18 @@
                    fromContext:(NSManagedObjectContext *)context
                          error:(NSError **)error;
 
+- (NSArray<City *> *)_fetchCitiesForWeathers:(NSArray<ModelServiceWeather *> *)weathers
+                                 fromContext:(NSManagedObjectContext *)context
+                                       error:(NSError **)error;
+
+- (WeatherInfo *)_fetchWeatherForWeather:(ModelServiceWeather *)weather
+                             fromContext:(NSManagedObjectContext *)context
+                                   error:(NSError **)error;
+
+- (NSArray<WeatherInfo *> *)_fetchWeathersForWeathers:(NSArray<ModelServiceWeather *> *)weathers
+                                          fromContext:(NSManagedObjectContext *)context
+                                                error:(NSError **)error;
+
 - (City *)_insertCityFromWeather:(ModelServiceWeather *)weather
                        inContext:(NSManagedObjectContext *)context;
 
@@ -119,14 +131,61 @@
                                          userInfo:nil];
         }
     }
-    [self _insertWeather:weather
-                 forCity:city
-               inContext:context];
+    WeatherInfo *weatherInfo = [self _fetchWeatherForWeather:weather
+                                                 fromContext:context
+                                                       error:&error];
+    if (!weatherInfo) {
+        [self _insertWeather:weather
+                     forCity:city
+                   inContext:context];
+    }
     if (![context save:&error]) {
         @throw [NSException exceptionWithName:@"Invalid processing"
                                        reason:[NSString stringWithFormat:@"Saving context failed due to %@", error]
                                      userInfo:nil];
     }
+}
+
+- (void)saveWeathers:(NSArray<ModelServiceWeather *> *)weathers {
+    if (NSThread.isMainThread) {
+        @throw [NSException exceptionWithName:@"Invalid processing"
+                                       reason:@"Saving weather has to be executed on another than main thread."
+                                     userInfo:nil];
+    }
+    NSError *error;
+    NSManagedObjectContext *context = [self.engine createWriteContext];
+    NSArray<City *> *cities = [self _fetchCitiesForWeathers:weathers
+                                                fromContext:context
+                                                      error:&error];
+    NSArray<WeatherInfo *> *weatherInfos = [self _fetchWeathersForWeathers:weathers
+                                                               fromContext:context
+                                                                     error:&error];
+    for (ModelServiceWeather *weather in weathers) {
+        City *city = [cities filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"identifier == %@", weather.identifier]
+                      ].firstObject;
+        if (!city) {
+            city = [self _insertCityFromWeather:weather
+                                      inContext:context];
+            if (!city) {
+                @throw [NSException exceptionWithName:@"Invalid processing"
+                                               reason:[NSString stringWithFormat:@"Saving city failed due to %@", error]
+                                             userInfo:nil];
+            }
+        }
+        WeatherInfo *weatherInfo = [weatherInfos filteredArrayUsingPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"city.identifier == %@", weather.identifier],
+                                                                                                                                  [NSPredicate predicateWithFormat:@"date == %@", weather.date]]]
+                                    ].firstObject;
+        if (!weatherInfo) {
+            [self _insertWeather:weather
+                         forCity:city
+                       inContext:context];
+        }
+    }
+    if (![context save:&error]) {
+          @throw [NSException exceptionWithName:@"Invalid processing"
+                                         reason:[NSString stringWithFormat:@"Saving context failed due to %@", error]
+                                       userInfo:nil];
+      }
 }
 
 @end
@@ -136,10 +195,47 @@
 - (City *)_fetchCityForWeather:(ModelServiceWeather *)weather
                    fromContext:(NSManagedObjectContext *)context
                          error:(NSError **)error {
-    NSFetchRequest *fetchRequest = [City fetchRequest];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@", weather.cityName];
+    NSFetchRequest *fetchRequest = City.fetchRequest;
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"identifier == %@", weather.identifier];
     return [context executeFetchRequest:fetchRequest
                                   error:error].firstObject;
+}
+
+- (NSArray<City *> *)_fetchCitiesForWeathers:(NSArray<ModelServiceWeather *> *)weathers
+                                 fromContext:(NSManagedObjectContext *)context
+                                       error:(NSError **)error {
+    NSMutableArray<NSNumber *> *ids = [[NSMutableArray alloc] init];
+    for (ModelServiceWeather *weather in weathers) {
+        [ids addObject:weather.identifier];
+    }
+    NSFetchRequest *fetchRequest = City.fetchRequest;
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"identifier IN %@", ids];
+    return [context executeFetchRequest:fetchRequest
+                                  error:error];
+}
+
+- (WeatherInfo *)_fetchWeatherForWeather:(ModelServiceWeather *)weather
+                             fromContext:(NSManagedObjectContext *)context
+                                   error:(NSError **)error {
+    NSFetchRequest *fetchRequest = WeatherInfo.fetchRequest;
+    fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"city.identifier == %@", weather.identifier],
+                                                                                  [NSPredicate predicateWithFormat:@"date == %@", weather.date]]];
+    return [context executeFetchRequest:fetchRequest
+                                  error:error].firstObject;
+}
+
+- (NSArray<WeatherInfo *> *)_fetchWeathersForWeathers:(NSArray<ModelServiceWeather *> *)weathers
+                                          fromContext:(NSManagedObjectContext *)context
+                                                error:(NSError **)error {
+    NSMutableArray<NSPredicate *> *predicates = [[NSMutableArray alloc] init];
+    for (ModelServiceWeather *weather in weathers) {
+        [predicates addObject:[NSCompoundPredicate andPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"city.identifier == %@", weather.identifier],
+                                                                                   [NSPredicate predicateWithFormat:@"date == %@", weather.date]]]];
+    }
+    NSFetchRequest *fetchRequest = WeatherInfo.fetchRequest;
+    fetchRequest.predicate = [NSCompoundPredicate orPredicateWithSubpredicates:predicates];
+    return [context executeFetchRequest:fetchRequest
+                                  error:error];
 }
 
 - (City *)_insertCityFromWeather:(ModelServiceWeather *)weather

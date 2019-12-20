@@ -16,9 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol WeatherDataLoader
 
 typedef void (^DataLoaderWeatherCompletition) (ModelServiceWeather * _Nullable object, NSError * _Nullable error);
+typedef void (^DataLoaderWeathersCompletition) (NSArray<ModelServiceWeather *> * _Nullable object, NSError * _Nullable error);
 
 - (void)loadWeatherWithName:(NSString *)name
                completition:(DataLoaderWeatherCompletition)completition;
+- (void)loadWeathersWithIds:(NSArray<NSNumber *> *)ids
+               completition:(DataLoaderWeathersCompletition)completition;
 
 @end
 

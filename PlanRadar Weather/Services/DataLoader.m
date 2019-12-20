@@ -10,6 +10,7 @@
 
 #import "NetworkEngine.h"
 #import "ModelServiceWeather.h"
+#import "ModelServiceWeatherList.h"
 
 @import Mantle;
 
@@ -89,6 +90,26 @@ typedef void (^DataLoaderCompletition) (id _Nullable object, NSError * _Nullable
             return;
         }
         completition(object, nil);
+    }];
+}
+
+- (void)loadWeathersWithIds:(NSArray<NSNumber *> *)ids
+               completition:(DataLoaderWeathersCompletition)completition {
+    NSMutableArray<NSString *> *idsParameters = [[NSMutableArray alloc] init];
+    for (NSNumber *id in ids) {
+        [idsParameters addObject:[NSString stringWithFormat:@"%@", id]];
+    }
+    Request *request = [self _constructRequestWithRelativePath:@"/group"
+                                                    attributes:@{@"id": [idsParameters componentsJoinedByString:@","]}];
+    [self _loadWithRequest:request
+                     class:ModelServiceWeatherList.class
+              completition:^(id  _Nullable object, NSError * _Nullable error) {
+        if (error) {
+            completition(nil, error);
+            return;
+        }
+        ModelServiceWeatherList *list = (ModelServiceWeatherList *) object;
+        completition(list.list, nil);
     }];
 }
 
