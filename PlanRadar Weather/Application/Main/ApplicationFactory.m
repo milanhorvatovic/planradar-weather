@@ -8,14 +8,34 @@
 
 #import "ApplicationFactory.h"
 
+#import "AppDelegate.h"
+
+#import "NavigationController.h"
 #import "CitiesListViewController.h"
 
 @implementation ApplicationFactory
 
 + (UIWindow *)createApplication {
+    if (![UIApplication.sharedApplication.delegate isKindOfClass:[AppDelegate class]]) {
+        @throw [NSException exceptionWithName:@"Initialization error"
+                                       reason:@"UIApplication is not of AppDelegate type"
+                                     userInfo:nil];
+    }
+    AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
+    if (!appDelegate) {
+        @throw [NSException exceptionWithName:@"Initialization error"
+                                       reason:@"AppDelegate is nil"
+                                     userInfo:nil];
+    }
+    id<FetchDataProvider> dataProvider = (id<FetchDataProvider>) appDelegate.dataProvider;
+    if (!dataProvider) {
+        @throw [NSException exceptionWithName:@"Initialization error"
+                                       reason:@"DataProvider is nil"
+                                     userInfo:nil];
+    }
     UIWindow *window = [[UIWindow alloc] initWithFrame: UIScreen.mainScreen.bounds];
-    CitiesListViewController *viewController = [[CitiesListViewController alloc] init];
-    window.rootViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    CitiesListViewController *viewController = [[CitiesListViewController alloc] initWithFetchDataProvider:dataProvider];
+    window.rootViewController = [[NavigationController alloc] initWithRootViewController:viewController];
     [window makeKeyAndVisible];
     return window;
 }
