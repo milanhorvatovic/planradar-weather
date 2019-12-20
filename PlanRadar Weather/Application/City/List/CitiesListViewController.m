@@ -15,6 +15,7 @@
 
 #import "CitiesListCell.h"
 #import "CitySeachViewController.h"
+#import "CityDetailViewController.h"
 
 @interface CitiesListViewController (CreateUI)
 
@@ -117,7 +118,9 @@
 @implementation CitiesListViewController (CreateUI)
 
 - (UIBarButtonItem *)_createAddButton {
-    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(_addButtonAction)];
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                         target:self
+                                                         action:@selector(_addButtonAction)];
 }
 
 - (UITableView *)_createTableView {
@@ -168,6 +171,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
+    
+    City *city = [self._resultsController objectAtIndexPath:indexPath];
+    if (!city) {
+        return;
+    }
+    AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
+    CityDetailViewController *viewController = [[CityDetailViewController alloc] initWithCity:city
+                                                                            weatherDataLoader:(id<WeatherDataLoader>) appDelegate.dataLoader
+                                                                             saveDataProvider:(id<SaveDataProvider>) appDelegate.dataProvider];
+    [self presentViewController:viewController
+                       animated:YES
+                     completion:nil];
 }
 
 @end
