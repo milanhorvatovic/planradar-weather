@@ -33,8 +33,15 @@
                                        reason:@"DataProvider is nil"
                                      userInfo:nil];
     }
+    id<WeatherDataLoader> dataLoader = (id<WeatherDataLoader>) appDelegate.dataLoader;
+    if (!dataProvider) {
+        @throw [NSException exceptionWithName:@"Initialization error"
+                                       reason:@"DataProvider is nil"
+                                     userInfo:nil];
+    }
     UIWindow *window = [[UIWindow alloc] initWithFrame: UIScreen.mainScreen.bounds];
-    CitiesListViewController *viewController = [[CitiesListViewController alloc] initWithFetchDataProvider:dataProvider];
+    CitiesListViewController *viewController = [[CitiesListViewController alloc] initWithFetchDataProvider:dataProvider
+                                                                                         weatherDataLoader:dataLoader];
     window.rootViewController = [[NavigationController alloc] initWithRootViewController:viewController];
     [window makeKeyAndVisible];
     window.tintColor = [UIColor colorNamed:@"Tint"];

@@ -10,6 +10,7 @@
 
 #import "AppDelegate.h"
 #import "DataProvider.h"
+#import "DataLoader.h"
 #import "City+CoreDataProperties.h"
 #import "FetchedResultsControllerDelegate.h"
 
@@ -22,12 +23,15 @@
 
 - (UIBarButtonItem *)_createAddButton;
 - (UITableView *)_createTableView;
+- (UIRefreshControl *)_createPullToRefresh;
 
 @end
 
 @interface CitiesListViewController (Action)
 
 - (void)_addButtonAction;
+
+- (void)_pullToRefreshAction;
 
 @end
 
@@ -38,23 +42,27 @@
 
 @interface CitiesListViewController ()
 
-@property (nonnull, readwrite, strong, nonatomic) id<FetchDataProvider> dataProvider;
+@property (nonnull, readwrite, strong, nonatomic) id<FetchDataProvider, SaveDataProvider> dataProvider;
+@property (nonnull, readwrite, strong, nonatomic) id<WeatherDataLoader> dataLoader;
 
 @property (nonnull, readwrite, strong, nonatomic) NSFetchedResultsController *_resultsController;
 
 @property (nonnull, readwrite, strong, nonatomic) FetchedResultsControllerDelegate *_resultsControllerDelegate;
 
 
+@property (nullable, readwrite, strong, nonatomic) UIRefreshControl *_pullToRefresh;
 @property (nullable, readwrite, strong, nonatomic) UITableView *_tableView;
 
 @end
 
 @implementation CitiesListViewController
 
-- (instancetype)initWithFetchDataProvider:(id<FetchDataProvider>)dataProvider {
+- (instancetype)initWithFetchDataProvider:(id<FetchDataProvider>)dataProvider
+                        weatherDataLoader:(id<WeatherDataLoader>)dataLoader {
     if (self = [self initWithNibName:nil
                               bundle:nil]) {
         self.dataProvider = dataProvider;
+        self.dataLoader = dataLoader;
         self._resultsControllerDelegate = [[FetchedResultsControllerDelegate alloc] init];
     }
     return self;
@@ -85,10 +93,13 @@
     UIBarButtonItem *addItem = [self _createAddButton];
     self.navigationItem.rightBarButtonItem = addItem;
     
+    self._pullToRefresh = [self _createPullToRefresh];
+    
     self._tableView = [self _createTableView];
     [self.view addSubview:self._tableView];
     self._tableView.dataSource = self;
     self._tableView.delegate = self;
+    self._tableView.refreshControl = self._pullToRefresh;
     self._tableView.tableFooterView = [[UIView alloc] init];
     self._tableView.rowHeight = 48;
     
@@ -134,6 +145,13 @@
     return tableView;
 }
 
+- (UIRefreshControl *)_createPullToRefresh {
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to refresh"];
+    [refreshControl addTarget:self action:@selector(_pullToRefreshAction) forControlEvents:UIControlEventValueChanged];
+    return refreshControl;
+}
+
 @end
 
 @implementation CitiesListViewController (Action)
@@ -143,6 +161,27 @@
     CitySeachViewController *viewController = [[CitySeachViewController alloc] initWithWeatherDataLoader:(id<WeatherDataLoader>) appDelegate.dataLoader
                                                                                         saveDataProvider:(id<SaveDataProvider>) appDelegate.dataProvider];
     [self presentViewController:viewController animated:YES completion:nil];
+}
+
+- (void)_pullToRefreshAction {
+    NSMutableArray<NSNumber *> *ids = [[NSMutableArray alloc] init];
+    for (City *city in self._resultsController.fetchedObjects) {
+        [ids addObject:city.identifier];
+    }
+    
+    if (!ids.count) {
+        [self._pullToRefresh endRefreshing];
+        return;
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    [self.dataLoader loadWeathersWithIds:ids
+                            completition:^(NSArray<ModelServiceWeather *> * _Nullable object, NSError * _Nullable error) {
+        [weakSelf.dataProvider saveWeathers:object];
+        [NSOperationQueue.mainQueue addOperationWithBlock:^{
+            [weakSelf._pullToRefresh endRefreshing];
+        }];
+    }];
 }
 
 @end

@@ -9,13 +9,14 @@
 @import UIKit;
 
 #import "CommonViewController.h"
-@protocol FetchDataProvider;
+@protocol FetchDataProvider, SaveDataProvider, WeatherDataLoader;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CitiesListViewController: CommonViewController
 
-- (instancetype)initWithFetchDataProvider:(id<FetchDataProvider>)dataProvider;
+- (instancetype)initWithFetchDataProvider:(id<FetchDataProvider, SaveDataProvider>)dataProvider
+                        weatherDataLoader:(id<WeatherDataLoader>)dataLoader;
 
 @end
 
