@@ -24,6 +24,7 @@
 - (UIBarButtonItem *)_createAddButton;
 - (UITableView *)_createTableView;
 - (UIRefreshControl *)_createPullToRefresh;
+- (UIView *)_createEmptyBackgroundView;
 
 @end
 
@@ -79,6 +80,7 @@
                                        reason:[NSString stringWithFormat:@"Fetch failed due to %@", error]
                                      userInfo:nil];
     }
+    self._tableView.backgroundView.alpha = self._resultsController.fetchedObjects.count > 0 ? 0 : 1;
 }
 
 @end
@@ -90,6 +92,14 @@
     
     self.title = @"CITIES";
     
+    __weak typeof(self) weakSelf = self;
+    self._resultsControllerDelegate.completition = ^(NSInteger count) {
+        [UIView animateWithDuration:0.25
+                         animations:^{
+            weakSelf._tableView.backgroundView.alpha = count > 0 ? 0 : 1;
+        }];
+    };
+    
     UIBarButtonItem *addItem = [self _createAddButton];
     self.navigationItem.rightBarButtonItem = addItem;
     
@@ -100,6 +110,7 @@
     self._tableView.dataSource = self;
     self._tableView.delegate = self;
     self._tableView.refreshControl = self._pullToRefresh;
+    self._tableView.backgroundView = [self _createEmptyBackgroundView];
     self._tableView.tableFooterView = [[UIView alloc] init];
     self._tableView.rowHeight = 48;
     
@@ -152,6 +163,29 @@
                        action:@selector(_pullToRefreshAction)
              forControlEvents:UIControlEventValueChanged];
     return refreshControl;
+}
+
+- (UIView *)_createEmptyBackgroundView {
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = UIColor.clearColor;
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.font = [UIFont systemFontOfSize:16
+                                   weight:UIFontWeightSemibold];
+    label.textColor = [UIColor colorNamed:@"NormalText"];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.numberOfLines = 0;
+    label.text = @"You don't have any cities. To start use '+' button above.";
+    
+    label.translatesAutoresizingMaskIntoConstraints = NO;
+    [view addSubview:label];
+    [label.centerYAnchor constraintEqualToAnchor:view.centerYAnchor].active = YES;
+    [label.leftAnchor constraintEqualToAnchor:view.leftAnchor
+                                     constant:10].active = YES;
+    [label.rightAnchor constraintEqualToAnchor:view.rightAnchor
+                                      constant:10].active = YES;
+    
+    return view;
 }
 
 @end

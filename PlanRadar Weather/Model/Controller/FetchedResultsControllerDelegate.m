@@ -12,6 +12,7 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
+    self.completition(controller.fetchedObjects.count);
 }
 
 - (void)controller:(NSFetchedResultsController *)controller
@@ -55,6 +56,7 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
+    self.completition(controller.fetchedObjects.count);
 }
 
 @end

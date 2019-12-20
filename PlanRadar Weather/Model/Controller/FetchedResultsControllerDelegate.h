@@ -14,7 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FetchedResultsControllerDelegate: NSObject <NSFetchedResultsControllerDelegate>
 
+typedef void (^FetchedResultsControllerCountChangedCompletition) (NSInteger count);
+
 @property (nullable, readwrite, strong, nonatomic) UITableView *tableView;
+
+@property (nullable, readwrite, copy, nonatomic) FetchedResultsControllerCountChangedCompletition completition;
 
 @end
 
