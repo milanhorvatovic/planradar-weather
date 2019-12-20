@@ -19,6 +19,7 @@
 @dynamic state;
 @dynamic temperature;
 @dynamic windSpeed;
+@dynamic icon;
 @dynamic city;
 
 @end

@@ -9,6 +9,7 @@
     <entity name="WeatherInfo" representedClassName="WeatherInfo" syncable="YES">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="humidity" attributeType="Integer 16" usesScalarValueType="NO"/>
+        <attribute name="icon" attributeType="String"/>
         <attribute name="state" attributeType="String"/>
         <attribute name="temperature" attributeType="Double" usesScalarValueType="NO"/>
         <attribute name="windSpeed" attributeType="Double" usesScalarValueType="NO"/>
@@ -16,6 +17,6 @@
     </entity>
     <elements>
         <element name="City" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="WeatherInfo" positionX="-54" positionY="9" width="128" height="133"/>
+        <element name="WeatherInfo" positionX="-54" positionY="9" width="128" height="148"/>
     </elements>
 </model>

@@ -21,6 +21,8 @@
 @property (nonnull, readonly, strong, nonatomic) NSNumber *humidity;
 @property (nonnull, readonly, strong, nonatomic) NSNumber *windSpeed;
 
+@property (nonnull, readonly, copy, nonatomic) NSString *icon;
+
 @property (nonnull, readonly, strong, nonatomic) NSDate *date;
 
 @end

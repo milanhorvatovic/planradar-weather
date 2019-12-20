@@ -262,6 +262,7 @@
     entity.temperature = weather.temperature;
     entity.humidity = weather.humidity;
     entity.windSpeed = weather.windSpeed;
+    entity.icon = weather.icon;
     entity.city = city;
     [city addWeathersObject:entity];
     return entity;

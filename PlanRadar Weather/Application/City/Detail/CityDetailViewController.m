@@ -9,9 +9,9 @@
 #import "CityDetailViewController.h"
 #import "CityDetailViewController_Protected.h"
 
-#import "FormatterHelper.h"
-
 #import "CorneredView.h"
+
+NSString * const DetailIconURLTemplate = @"https://api.openweathermap.org/img/w/%@.png";
 
 @interface CityDetailViewController (CreateUI)
 
@@ -19,6 +19,7 @@
 - (UIStackView *)_createVerticalStackView;
 - (UILabel *)_createDataTitleLabelWithTitle:(NSString *)title;
 - (UILabel *)_createDataValueLabel;
+- (UIImageView *)_createImageView;
 
 - (UIButton *)_createCloseButton;
 - (UILabel *)_createTitleLabel;
@@ -46,6 +47,10 @@
     self._titleLabel = [self _createTitleLabel];
     self._contentView = [self _createContentView];
     self._dataStackView = [self _createVerticalStackView];
+    {
+        self._iconImageView = [self _createImageView];
+        [self._dataStackView addArrangedSubview:self._iconImageView];
+    }
     {
         UIStackView *stackView = [self _createHorizontalStackView];
         stackView.alignment = UIStackViewAlignmentBottom;
@@ -174,6 +179,9 @@
                                                   constant:20].active = YES;
     [self._dataStackView.bottomAnchor constraintEqualToAnchor:self._contentView.bottomAnchor
                                                      constant:-20].active = YES;
+    
+    [self._iconImageView.widthAnchor constraintEqualToAnchor:self._iconImageView.heightAnchor
+                                                  multiplier:1].active = YES;
 }
 
 @end
@@ -215,6 +223,13 @@
     label.numberOfLines = 1;
     label.translatesAutoresizingMaskIntoConstraints = NO;
     return label;
+}
+
+- (UIImageView *)_createImageView {
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    return imageView;
 }
 
 - (UIButton *)_createCloseButton {

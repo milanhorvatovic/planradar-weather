@@ -19,6 +19,8 @@
 @property (nonnull, readwrite, strong, nonatomic) NSNumber *humidity;
 @property (nonnull, readwrite, strong, nonatomic) NSNumber *windSpeed;
 
+@property (nonnull, readwrite, copy, nonatomic) NSString *icon;
+
 @property (nonnull, readwrite, strong, nonatomic) NSDate *date;
 
 @end
@@ -34,6 +36,7 @@
         @"temperature": @"main.temp",
         @"humidity": @"main.humidity",
         @"windSpeed": @"wind.speed",
+        @"icon": @"weather",
         @"date": @"dt"
     };
 }
@@ -57,6 +60,22 @@
             return nil;
         }
         return dictionary[@"description"];
+    }
+                                                reverseBlock:^id(NSString *value, BOOL *success, NSError *__autoreleasing *error) {
+        return nil;
+    }];
+}
+
++ (NSValueTransformer *)iconJSONTransformer {
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(NSArray<NSDictionary *> *value, BOOL *success, NSError *__autoreleasing *error) {
+        if (!value) {
+            return nil;
+        }
+        NSDictionary *dictionary = value.firstObject;
+        if (!dictionary) {
+            return nil;
+        }
+        return dictionary[@"icon"];
     }
                                                 reverseBlock:^id(NSString *value, BOOL *success, NSError *__autoreleasing *error) {
         return nil;

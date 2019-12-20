@@ -13,7 +13,6 @@
 #import "DataProvider.h"
 #import "ModelServiceWeather.h"
 #import "City+CoreDataProperties.h"
-#import "FormatterHelper.h"
 
 @interface CityDetailViewController (Configure)
 
@@ -71,6 +70,7 @@
 - (void)_configureWithCity:(nonnull ModelServiceWeather *)weather {
     self._titleLabel.text = weather.cityName;
     
+    [self._iconImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:DetailIconURLTemplate, weather.icon]]];
     self._stateLabel.text = weather.state;
     self._temperatureLabel.text = [FormatterHelper formatTemperature:weather.temperature];
     self._humidityLabel.text = [FormatterHelper formatHumidity:weather.humidity];

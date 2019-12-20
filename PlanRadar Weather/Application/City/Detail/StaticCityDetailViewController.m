@@ -11,7 +11,6 @@
 
 #import "WeatherInfo+CoreDataProperties.h"
 #import "City+CoreDataProperties.h"
-#import "FormatterHelper.h"
 
 @interface StaticCityDetailViewController (Configure)
 
@@ -48,6 +47,7 @@
 - (void)_configureWithCity:(nonnull WeatherInfo *)weatherInfo {
     self._titleLabel.text = weatherInfo.city.name;
     
+    [self._iconImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:DetailIconURLTemplate, weatherInfo.icon]]];
     self._stateLabel.text = weatherInfo.state;
     self._temperatureLabel.text = [FormatterHelper formatTemperature:weatherInfo.temperature];
     self._humidityLabel.text = [FormatterHelper formatHumidity:weatherInfo.humidity];

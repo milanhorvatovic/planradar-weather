@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *state;
 @property (nullable, nonatomic, copy) NSNumber *temperature;
 @property (nullable, nonatomic, copy) NSNumber *windSpeed;
+@property (nullable, nonatomic, copy) NSString *icon;
 @property (nullable, nonatomic, retain) City *city;
 
 @end
