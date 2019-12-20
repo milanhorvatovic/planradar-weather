@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+@protocol NetworkEngine;
+@class DataLoader, DataProvider;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (readonly, strong) NSPersistentContainer *persistentContainer;
+@property (nonnull, readonly, strong, nonatomic) id<NetworkEngine> networkEngine;
+@property (nonnull, readonly, strong, nonatomic) DataLoader *dataLoader;
+@property (nonnull, readonly, strong, nonatomic) DataProvider *dataProvider;
+
+@property (nonnull, readonly, strong) NSPersistentContainer *persistentContainer;
 
 - (void)saveContext;
 

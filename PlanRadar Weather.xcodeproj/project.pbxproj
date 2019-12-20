@@ -9,6 +9,33 @@
 /* Begin PBXBuildFile section */
 		2CBF80A22BAF3D1ACEED385E /* Pods_PlanRadar_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4A2D52A63AEFA6FCD937D8 /* Pods_PlanRadar_Weather.framework */; };
 		9A9B04090E1F0D28831DF06F /* Pods_PlanRadar_WeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */; };
+		F465ED4D23AC06D7008120CB /* DataLoaderMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED4C23AC06D7008120CB /* DataLoaderMock.m */; };
+		F465ED5023AC0B8C008120CB /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED4F23AC0B8C008120CB /* DataProvider.m */; };
+		F465ED5A23AC0D70008120CB /* WeatherInfo+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5423AC0D70008120CB /* WeatherInfo+CoreDataClass.m */; };
+		F465ED5B23AC0D70008120CB /* City+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5523AC0D70008120CB /* City+CoreDataClass.m */; };
+		F465ED5C23AC0D70008120CB /* City+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5623AC0D70008120CB /* City+CoreDataProperties.m */; };
+		F465ED5D23AC0D70008120CB /* WeatherInfo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED5723AC0D70008120CB /* WeatherInfo+CoreDataProperties.m */; };
+		F465ED6123AC2687008120CB /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED6023AC2687008120CB /* CommonViewController.m */; };
+		F465ED6423AC2955008120CB /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED6323AC2955008120CB /* BackgroundView.m */; };
+		F465ED6923AC2CD4008120CB /* ImageBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED6823AC2CD4008120CB /* ImageBackgroundView.m */; };
+		F465ED6F23AC4084008120CB /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED6E23AC4084008120CB /* NavigationController.m */; };
+		F465ED7323AC4233008120CB /* FetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED7223AC4233008120CB /* FetchedResultsControllerDelegate.m */; };
+		F465ED7423AC57B6008120CB /* CitiesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED6B23AC3E46008120CB /* CitiesListCell.m */; };
+		F465ED7823AC5D23008120CB /* CitySeachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED7723AC5D23008120CB /* CitySeachViewController.m */; };
+		F465ED7C23AC6F79008120CB /* CityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED7B23AC6F79008120CB /* CityDetailViewController.m */; };
+		F465ED7F23AC79F2008120CB /* FormatterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED7E23AC79F2008120CB /* FormatterHelper.m */; };
+		F465ED8223AC865E008120CB /* CorneredView.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED8123AC865E008120CB /* CorneredView.m */; };
+		F465ED8623AC8842008120CB /* HistoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED8523AC8842008120CB /* HistoryListViewController.m */; };
+		F465ED8923AC8A1A008120CB /* HistoryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F465ED8823AC8A1A008120CB /* HistoryListCell.m */; };
+		F47C334423ABC9EA00920151 /* NetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334323ABC9EA00920151 /* NetworkEngine.m */; };
+		F47C334723ABD46200920151 /* NetworkEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334623ABD46200920151 /* NetworkEngineTests.m */; };
+		F47C334A23ABD8A100920151 /* NetworkEngineMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334923ABD8A100920151 /* NetworkEngineMock.m */; };
+		F47C334E23ABEA2300920151 /* ModelServiceWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C334D23ABEA2300920151 /* ModelServiceWeather.m */; };
+		F47C335223AC000300920151 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C335123AC000300920151 /* DataLoader.m */; };
+		F47C335423AC05F200920151 /* DataLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F47C335323AC05F200920151 /* DataLoaderTests.m */; };
+		F4B52DAB23AC982000397DEA /* ModelServiceWeatherList.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B52DAA23AC982000397DEA /* ModelServiceWeatherList.m */; };
+		F4B52DAE23ACA8D700397DEA /* StaticCityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B52DAD23ACA8D700397DEA /* StaticCityDetailViewController.m */; };
+		F4B52DB123ACA8FD00397DEA /* LiveCityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B52DB023ACA8FD00397DEA /* LiveCityDetailViewController.m */; };
 		F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24CA23ABAFD50066E2A0 /* main.m */; };
 		F4BC24D523ABAFD50066E2A0 /* PlanRadar_WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24D423ABAFD50066E2A0 /* PlanRadar_WeatherTests.m */; };
 		F4BC24E023ABAFD50066E2A0 /* PlanRadar_WeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24DF23ABAFD50066E2A0 /* PlanRadar_WeatherUITests.m */; };
@@ -17,6 +44,8 @@
 		F4BC250023ABB0D40066E2A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BC24F223ABB0D40066E2A0 /* LaunchScreen.storyboard */; };
 		F4BC250323ABB0D40066E2A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24FB23ABB0D40066E2A0 /* AppDelegate.m */; };
 		F4BC250423ABB0D40066E2A0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC24FD23ABB0D40066E2A0 /* SceneDelegate.m */; };
+		F4BC250823ABB83F0066E2A0 /* CitiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC250723ABB83F0066E2A0 /* CitiesListViewController.m */; };
+		F4BC250D23ABB87A0066E2A0 /* ApplicationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BC250C23ABB87A0066E2A0 /* ApplicationFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +71,59 @@
 		BA92C0C817230F4C56AE48F3 /* Pods_PlanRadar_WeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadar_WeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04B2F111F86EF5FECE885CB /* Pods-PlanRadar WeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar WeatherTests.release.xcconfig"; path = "Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		E94CF7BA001B6826923B9518 /* Pods-PlanRadar WeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar WeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadar WeatherTests/Pods-PlanRadar WeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F465ED4B23AC06D7008120CB /* DataLoaderMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLoaderMock.h; sourceTree = "<group>"; };
+		F465ED4C23AC06D7008120CB /* DataLoaderMock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataLoaderMock.m; sourceTree = "<group>"; };
+		F465ED4E23AC0B8C008120CB /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
+		F465ED4F23AC0B8C008120CB /* DataProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
+		F465ED5223AC0D70008120CB /* WeatherInfo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeatherInfo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F465ED5323AC0D70008120CB /* City+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+CoreDataClass.h"; sourceTree = "<group>"; };
+		F465ED5423AC0D70008120CB /* WeatherInfo+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WeatherInfo+CoreDataClass.m"; sourceTree = "<group>"; };
+		F465ED5523AC0D70008120CB /* City+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+CoreDataClass.m"; sourceTree = "<group>"; };
+		F465ED5623AC0D70008120CB /* City+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "City+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F465ED5723AC0D70008120CB /* WeatherInfo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WeatherInfo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F465ED5823AC0D70008120CB /* WeatherInfo+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WeatherInfo+CoreDataClass.h"; sourceTree = "<group>"; };
+		F465ED5923AC0D70008120CB /* City+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "City+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F465ED5F23AC2687008120CB /* CommonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
+		F465ED6023AC2687008120CB /* CommonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
+		F465ED6223AC2955008120CB /* BackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
+		F465ED6323AC2955008120CB /* BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
+		F465ED6723AC2CD4008120CB /* ImageBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageBackgroundView.h; sourceTree = "<group>"; };
+		F465ED6823AC2CD4008120CB /* ImageBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageBackgroundView.m; sourceTree = "<group>"; };
+		F465ED6A23AC3E46008120CB /* CitiesListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesListCell.h; sourceTree = "<group>"; };
+		F465ED6B23AC3E46008120CB /* CitiesListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesListCell.m; sourceTree = "<group>"; };
+		F465ED6D23AC4084008120CB /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		F465ED6E23AC4084008120CB /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		F465ED7123AC4233008120CB /* FetchedResultsControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FetchedResultsControllerDelegate.h; sourceTree = "<group>"; };
+		F465ED7223AC4233008120CB /* FetchedResultsControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsControllerDelegate.m; sourceTree = "<group>"; };
+		F465ED7623AC5D23008120CB /* CitySeachViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitySeachViewController.h; sourceTree = "<group>"; };
+		F465ED7723AC5D23008120CB /* CitySeachViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitySeachViewController.m; sourceTree = "<group>"; };
+		F465ED7A23AC6F79008120CB /* CityDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityDetailViewController.h; sourceTree = "<group>"; };
+		F465ED7B23AC6F79008120CB /* CityDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityDetailViewController.m; sourceTree = "<group>"; };
+		F465ED7D23AC79F2008120CB /* FormatterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormatterHelper.h; sourceTree = "<group>"; };
+		F465ED7E23AC79F2008120CB /* FormatterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormatterHelper.m; sourceTree = "<group>"; };
+		F465ED8023AC865E008120CB /* CorneredView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CorneredView.h; sourceTree = "<group>"; };
+		F465ED8123AC865E008120CB /* CorneredView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CorneredView.m; sourceTree = "<group>"; };
+		F465ED8423AC8842008120CB /* HistoryListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryListViewController.h; sourceTree = "<group>"; };
+		F465ED8523AC8842008120CB /* HistoryListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryListViewController.m; sourceTree = "<group>"; };
+		F465ED8723AC8A1A008120CB /* HistoryListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryListCell.h; sourceTree = "<group>"; };
+		F465ED8823AC8A1A008120CB /* HistoryListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryListCell.m; sourceTree = "<group>"; };
+		F47C334223ABC9EA00920151 /* NetworkEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkEngine.h; sourceTree = "<group>"; };
+		F47C334323ABC9EA00920151 /* NetworkEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkEngine.m; sourceTree = "<group>"; };
+		F47C334623ABD46200920151 /* NetworkEngineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkEngineTests.m; sourceTree = "<group>"; };
+		F47C334923ABD8A100920151 /* NetworkEngineMock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkEngineMock.m; sourceTree = "<group>"; };
+		F47C334C23ABDBD600920151 /* NetworkEngineMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkEngineMock.h; sourceTree = "<group>"; };
+		F47C334D23ABEA2300920151 /* ModelServiceWeather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelServiceWeather.m; sourceTree = "<group>"; };
+		F47C334F23ABEA4700920151 /* ModelServiceWeather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelServiceWeather.h; sourceTree = "<group>"; };
+		F47C335023AC000300920151 /* DataLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLoader.h; sourceTree = "<group>"; };
+		F47C335123AC000300920151 /* DataLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
+		F47C335323AC05F200920151 /* DataLoaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataLoaderTests.m; sourceTree = "<group>"; };
+		F4B52DA923AC982000397DEA /* ModelServiceWeatherList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelServiceWeatherList.h; sourceTree = "<group>"; };
+		F4B52DAA23AC982000397DEA /* ModelServiceWeatherList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelServiceWeatherList.m; sourceTree = "<group>"; };
+		F4B52DAC23ACA8D700397DEA /* StaticCityDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticCityDetailViewController.h; sourceTree = "<group>"; };
+		F4B52DAD23ACA8D700397DEA /* StaticCityDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticCityDetailViewController.m; sourceTree = "<group>"; };
+		F4B52DAF23ACA8FC00397DEA /* LiveCityDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveCityDetailViewController.h; sourceTree = "<group>"; };
+		F4B52DB023ACA8FD00397DEA /* LiveCityDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveCityDetailViewController.m; sourceTree = "<group>"; };
+		F4B52DB223ACAA8F00397DEA /* CityDetailViewController_Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityDetailViewController_Protected.h; sourceTree = "<group>"; };
 		F4BC24B223ABAFD40066E2A0 /* PlanRadar Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PlanRadar Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BC24CA23ABAFD50066E2A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4BC24D023ABAFD50066E2A0 /* PlanRadar WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PlanRadar WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +140,10 @@
 		F4BC24FB23ABB0D40066E2A0 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4BC24FC23ABB0D40066E2A0 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		F4BC24FD23ABB0D40066E2A0 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		F4BC250623ABB83F0066E2A0 /* CitiesListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitiesListViewController.h; sourceTree = "<group>"; };
+		F4BC250723ABB83F0066E2A0 /* CitiesListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CitiesListViewController.m; sourceTree = "<group>"; };
+		F4BC250B23ABB87A0066E2A0 /* ApplicationFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationFactory.h; sourceTree = "<group>"; };
+		F4BC250C23ABB87A0066E2A0 /* ApplicationFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationFactory.m; sourceTree = "<group>"; };
 		FC525A000A7F5F6484E2CDE6 /* Pods-PlanRadar Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadar Weather.release.xcconfig"; path = "Target Support Files/Pods-PlanRadar Weather/Pods-PlanRadar Weather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +194,141 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F465ED5123AC0D49008120CB /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED5323AC0D70008120CB /* City+CoreDataClass.h */,
+				F465ED5523AC0D70008120CB /* City+CoreDataClass.m */,
+				F465ED5923AC0D70008120CB /* City+CoreDataProperties.h */,
+				F465ED5623AC0D70008120CB /* City+CoreDataProperties.m */,
+				F465ED5823AC0D70008120CB /* WeatherInfo+CoreDataClass.h */,
+				F465ED5423AC0D70008120CB /* WeatherInfo+CoreDataClass.m */,
+				F465ED5223AC0D70008120CB /* WeatherInfo+CoreDataProperties.h */,
+				F465ED5723AC0D70008120CB /* WeatherInfo+CoreDataProperties.m */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		F465ED5E23AC2672008120CB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED6523AC2C93008120CB /* View */,
+				F465ED6623AC2C9A008120CB /* ViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F465ED6523AC2C93008120CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED6223AC2955008120CB /* BackgroundView.h */,
+				F465ED6323AC2955008120CB /* BackgroundView.m */,
+				F465ED6723AC2CD4008120CB /* ImageBackgroundView.h */,
+				F465ED6823AC2CD4008120CB /* ImageBackgroundView.m */,
+				F465ED8023AC865E008120CB /* CorneredView.h */,
+				F465ED8123AC865E008120CB /* CorneredView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F465ED6623AC2C9A008120CB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED5F23AC2687008120CB /* CommonViewController.h */,
+				F465ED6023AC2687008120CB /* CommonViewController.m */,
+				F465ED6D23AC4084008120CB /* NavigationController.h */,
+				F465ED6E23AC4084008120CB /* NavigationController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F465ED7023AC421C008120CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED7123AC4233008120CB /* FetchedResultsControllerDelegate.h */,
+				F465ED7223AC4233008120CB /* FetchedResultsControllerDelegate.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F465ED7523AC5CD5008120CB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED7623AC5D23008120CB /* CitySeachViewController.h */,
+				F465ED7723AC5D23008120CB /* CitySeachViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F465ED7923AC6F56008120CB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED7A23AC6F79008120CB /* CityDetailViewController.h */,
+				F465ED7B23AC6F79008120CB /* CityDetailViewController.m */,
+				F4B52DB223ACAA8F00397DEA /* CityDetailViewController_Protected.h */,
+				F4B52DAC23ACA8D700397DEA /* StaticCityDetailViewController.h */,
+				F4B52DAD23ACA8D700397DEA /* StaticCityDetailViewController.m */,
+				F4B52DAF23ACA8FC00397DEA /* LiveCityDetailViewController.h */,
+				F4B52DB023ACA8FD00397DEA /* LiveCityDetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F465ED8323AC882C008120CB /* History */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED8423AC8842008120CB /* HistoryListViewController.h */,
+				F465ED8523AC8842008120CB /* HistoryListViewController.m */,
+				F465ED8723AC8A1A008120CB /* HistoryListCell.h */,
+				F465ED8823AC8A1A008120CB /* HistoryListCell.m */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		F47C334023ABC8AA00920151 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F47C334F23ABEA4700920151 /* ModelServiceWeather.h */,
+				F47C334D23ABEA2300920151 /* ModelServiceWeather.m */,
+				F4B52DA923AC982000397DEA /* ModelServiceWeatherList.h */,
+				F4B52DAA23AC982000397DEA /* ModelServiceWeatherList.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F47C334123ABC9D300920151 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F47C334223ABC9EA00920151 /* NetworkEngine.h */,
+				F47C334323ABC9EA00920151 /* NetworkEngine.m */,
+				F47C335023AC000300920151 /* DataLoader.h */,
+				F47C335123AC000300920151 /* DataLoader.m */,
+				F465ED4E23AC0B8C008120CB /* DataProvider.h */,
+				F465ED4F23AC0B8C008120CB /* DataProvider.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F47C334523ABD45900920151 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F47C334623ABD46200920151 /* NetworkEngineTests.m */,
+				F47C335323AC05F200920151 /* DataLoaderTests.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F47C334823ABD88F00920151 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				F47C334C23ABDBD600920151 /* NetworkEngineMock.h */,
+				F47C334923ABD8A100920151 /* NetworkEngineMock.m */,
+				F465ED4B23AC06D7008120CB /* DataLoaderMock.h */,
+				F465ED4C23AC06D7008120CB /* DataLoaderMock.m */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		F4BC24A923ABAFD40066E2A0 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +356,7 @@
 			children = (
 				F4BC24F823ABB0D40066E2A0 /* Application */,
 				F4BC24ED23ABB0D40066E2A0 /* Model */,
+				F47C334123ABC9D300920151 /* Services */,
 				F4BC24F023ABB0D40066E2A0 /* Resources */,
 				F4BC24F623ABB0D40066E2A0 /* Supporting files */,
 				F4BC24CA23ABAFD50066E2A0 /* main.m */,
@@ -145,6 +367,8 @@
 		F4BC24D323ABAFD50066E2A0 /* PlanRadar WeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				F47C334823ABD88F00920151 /* Mock */,
+				F47C334523ABD45900920151 /* Data */,
 				F4BC24D423ABAFD50066E2A0 /* PlanRadar_WeatherTests.m */,
 				F4BC24D623ABAFD50066E2A0 /* Info.plist */,
 			);
@@ -163,7 +387,12 @@
 		F4BC24ED23ABB0D40066E2A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F465ED7023AC421C008120CB /* Controller */,
+				F465ED5123AC0D49008120CB /* Content */,
+				F47C334023ABC8AA00920151 /* Service */,
 				F4BC24EE23ABB0D40066E2A0 /* PlanRadar_Weather.xcdatamodeld */,
+				F465ED7D23AC79F2008120CB /* FormatterHelper.h */,
+				F465ED7E23AC79F2008120CB /* FormatterHelper.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +417,8 @@
 		F4BC24F823ABB0D40066E2A0 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				F465ED5E23AC2672008120CB /* UI */,
+				F4BC250923ABB84B0066E2A0 /* City */,
 				F4BC24F923ABB0D40066E2A0 /* Main */,
 			);
 			path = Application;
@@ -200,8 +431,32 @@
 				F4BC24FB23ABB0D40066E2A0 /* AppDelegate.m */,
 				F4BC24FC23ABB0D40066E2A0 /* SceneDelegate.h */,
 				F4BC24FD23ABB0D40066E2A0 /* SceneDelegate.m */,
+				F4BC250B23ABB87A0066E2A0 /* ApplicationFactory.h */,
+				F4BC250C23ABB87A0066E2A0 /* ApplicationFactory.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		F4BC250523ABB8240066E2A0 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F4BC250623ABB83F0066E2A0 /* CitiesListViewController.h */,
+				F4BC250723ABB83F0066E2A0 /* CitiesListViewController.m */,
+				F465ED6A23AC3E46008120CB /* CitiesListCell.h */,
+				F465ED6B23AC3E46008120CB /* CitiesListCell.m */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F4BC250923ABB84B0066E2A0 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				F465ED8323AC882C008120CB /* History */,
+				F465ED7923AC6F56008120CB /* Detail */,
+				F465ED7523AC5CD5008120CB /* Search */,
+				F4BC250523ABB8240066E2A0 /* List */,
+			);
+			path = City;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,10 +673,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F465ED7C23AC6F79008120CB /* CityDetailViewController.m in Sources */,
+				F465ED5C23AC0D70008120CB /* City+CoreDataProperties.m in Sources */,
+				F4B52DAB23AC982000397DEA /* ModelServiceWeatherList.m in Sources */,
+				F465ED5B23AC0D70008120CB /* City+CoreDataClass.m in Sources */,
+				F465ED7823AC5D23008120CB /* CitySeachViewController.m in Sources */,
+				F465ED6F23AC4084008120CB /* NavigationController.m in Sources */,
+				F465ED7F23AC79F2008120CB /* FormatterHelper.m in Sources */,
+				F465ED8223AC865E008120CB /* CorneredView.m in Sources */,
+				F47C334423ABC9EA00920151 /* NetworkEngine.m in Sources */,
+				F465ED8623AC8842008120CB /* HistoryListViewController.m in Sources */,
 				F4BC24FE23ABB0D40066E2A0 /* PlanRadar_Weather.xcdatamodeld in Sources */,
+				F47C335223AC000300920151 /* DataLoader.m in Sources */,
+				F47C334E23ABEA2300920151 /* ModelServiceWeather.m in Sources */,
+				F465ED5023AC0B8C008120CB /* DataProvider.m in Sources */,
+				F465ED7423AC57B6008120CB /* CitiesListCell.m in Sources */,
+				F465ED5A23AC0D70008120CB /* WeatherInfo+CoreDataClass.m in Sources */,
+				F4B52DAE23ACA8D700397DEA /* StaticCityDetailViewController.m in Sources */,
 				F4BC24CB23ABAFD50066E2A0 /* main.m in Sources */,
+				F465ED6923AC2CD4008120CB /* ImageBackgroundView.m in Sources */,
 				F4BC250323ABB0D40066E2A0 /* AppDelegate.m in Sources */,
+				F465ED8923AC8A1A008120CB /* HistoryListCell.m in Sources */,
+				F465ED5D23AC0D70008120CB /* WeatherInfo+CoreDataProperties.m in Sources */,
+				F465ED7323AC4233008120CB /* FetchedResultsControllerDelegate.m in Sources */,
+				F4BC250D23ABB87A0066E2A0 /* ApplicationFactory.m in Sources */,
+				F465ED6423AC2955008120CB /* BackgroundView.m in Sources */,
 				F4BC250423ABB0D40066E2A0 /* SceneDelegate.m in Sources */,
+				F465ED6123AC2687008120CB /* CommonViewController.m in Sources */,
+				F4BC250823ABB83F0066E2A0 /* CitiesListViewController.m in Sources */,
+				F4B52DB123ACA8FD00397DEA /* LiveCityDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +709,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47C335423AC05F200920151 /* DataLoaderTests.m in Sources */,
+				F47C334723ABD46200920151 /* NetworkEngineTests.m in Sources */,
+				F47C334A23ABD8A100920151 /* NetworkEngineMock.m in Sources */,
+				F465ED4D23AC06D7008120CB /* DataLoaderMock.m in Sources */,
 				F4BC24D523ABAFD50066E2A0 /* PlanRadar_WeatherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

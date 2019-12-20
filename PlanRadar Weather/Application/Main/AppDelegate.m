@@ -8,15 +8,46 @@
 
 #import "AppDelegate.h"
 
+@import AFNetworking;
+
+#import "ApplicationFactory.h"
+#import "NetworkEngine.h"
+#import "DataProvider.h"
+#import "DataLoader.h"
+
 @interface AppDelegate ()
+
+@property (nonnull, readwrite, strong, nonatomic) id<NetworkEngine> networkEngine;
+@property (nonnull, readwrite, strong, nonatomic) DataLoader *dataLoader;
+@property (nonnull, readwrite, strong, nonatomic) DataProvider *dataProvider;
 
 @end
 
 @implementation AppDelegate
 
+@synthesize window;
+
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey,id> *)launchOptions {
+    self.persistentContainer.viewContext.automaticallyMergesChangesFromParent = YES;
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    manager.completionQueue = dispatch_queue_create([[NSBundle.mainBundle.bundleIdentifier stringByAppendingString:@".queue.services.completition"] cStringUsingEncoding:kCFStringEncodingUTF8],
+                                                    dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_USER_INITIATED, 0));
+    self.networkEngine = manager;
+    self.dataLoader = [[DataLoader alloc] initWithBasePath:@"https://api.openweathermap.org/data/2.5"
+                                                    engine:self.networkEngine];
+    self.dataProvider = [[DataProvider alloc] initWithEngine:self.persistentContainer];
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if (@available(iOS 13, *)) {
+    }
+    else {
+        self.window = [ApplicationFactory createApplication];
+    }
     return YES;
 }
 
