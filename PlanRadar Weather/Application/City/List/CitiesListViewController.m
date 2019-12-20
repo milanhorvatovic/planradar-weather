@@ -8,15 +8,24 @@
 
 #import "CitiesListViewController.h"
 
+#import "AppDelegate.h"
 #import "DataProvider.h"
 #import "City+CoreDataProperties.h"
 #import "FetchedResultsControllerDelegate.h"
 
 #import "CitiesListCell.h"
+#import "CitySeachViewController.h"
 
 @interface CitiesListViewController (CreateUI)
 
+- (UIBarButtonItem *)_createAddButton;
 - (UITableView *)_createTableView;
+
+@end
+
+@interface CitiesListViewController (Action)
+
+- (void)_addButtonAction;
 
 @end
 
@@ -71,6 +80,9 @@
     
     self.title = @"CITIES";
     
+    UIBarButtonItem *addItem = [self _createAddButton];
+    self.navigationItem.rightBarButtonItem = addItem;
+    
     self._tableView = [self _createTableView];
     [self.view addSubview:self._tableView];
     self._tableView.dataSource = self;
@@ -104,6 +116,10 @@
 
 @implementation CitiesListViewController (CreateUI)
 
+- (UIBarButtonItem *)_createAddButton {
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(_addButtonAction)];
+}
+
 - (UITableView *)_createTableView {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero
                                                           style:UITableViewStylePlain];
@@ -112,6 +128,17 @@
     [tableView registerClass:CitiesListCell.class
       forCellReuseIdentifier:@"CityCellIdentifier"];
     return tableView;
+}
+
+@end
+
+@implementation CitiesListViewController (Action)
+
+- (void)_addButtonAction {
+    AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
+    CitySeachViewController *viewController = [[CitySeachViewController alloc] initWithWeatherDataLoader:(id<WeatherDataLoader>) appDelegate.dataLoader
+                                                                                        saveDataProvider:(id<SaveDataProvider>) appDelegate.dataProvider];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 @end

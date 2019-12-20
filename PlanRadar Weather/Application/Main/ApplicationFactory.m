@@ -37,6 +37,7 @@
     CitiesListViewController *viewController = [[CitiesListViewController alloc] initWithFetchDataProvider:dataProvider];
     window.rootViewController = [[NavigationController alloc] initWithRootViewController:viewController];
     [window makeKeyAndVisible];
+    window.tintColor = [UIColor colorNamed:@"Tint"];
     return window;
 }
 
