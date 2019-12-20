@@ -20,6 +20,7 @@
         self.textLabel.textColor = [UIColor colorNamed:@"NormalText"];
         self.textLabel.font = [UIFont systemFontOfSize:15
                                                 weight:UIFontWeightBold];
+        self.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     }
     return self;
 }

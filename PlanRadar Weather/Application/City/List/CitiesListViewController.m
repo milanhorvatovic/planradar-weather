@@ -16,6 +16,7 @@
 #import "CitiesListCell.h"
 #import "CitySeachViewController.h"
 #import "CityDetailViewController.h"
+#import "HistoryListViewController.h"
 
 @interface CitiesListViewController (CreateUI)
 
@@ -183,6 +184,18 @@
     [self presentViewController:viewController
                        animated:YES
                      completion:nil];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    City *city = [self._resultsController objectAtIndexPath:indexPath];
+    if (!city) {
+        return;
+    }
+    AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
+    HistoryListViewController *viewController = [[HistoryListViewController alloc] initWithCity:city
+                                                                              fetchDataProvider:(id<FetchDataProvider>) appDelegate.dataProvider];
+    [self.navigationController pushViewController:viewController
+                                         animated:YES];
 }
 
 @end
